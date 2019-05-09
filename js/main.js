@@ -1,93 +1,57 @@
-(function($) {
-	"use strict"
 
-	///////////////////////////
-	// Preloader
-	$(window).on('load', function() {
-		$("#preloader").delay(600).fadeOut();
-	});
+(function ($) {
+    "use strict";
 
-	///////////////////////////
-	// Scrollspy
-	$('body').scrollspy({
-		target: '#nav',
-		offset: $(window).height() / 2
-	});
+    
+    /*==================================================================
+    [ Validate ]*/
+    var input = $('.validate-input .input100');
 
-	///////////////////////////
-	// Smooth scroll
-	$("#nav .main-nav a[href^='#']").on('click', function(e) {
-		e.preventDefault();
-		var hash = this.hash;
-		$('html, body').animate({
-			scrollTop: $(this.hash).offset().top
-		}, 600);
-	});
+    $('.validate-form').on('submit',function(){
+        var check = true;
 
-	$('#back-to-top').on('click', function(){
-		$('body,html').animate({
-			scrollTop: 0
-		}, 600);
-	});
+        for(var i=0; i<input.length; i++) {
+            if(validate(input[i]) == false){
+                showValidate(input[i]);
+                check=false;
+            }
+        }
 
-	///////////////////////////
-	// Btn nav collapse
-	$('#nav .nav-collapse').on('click', function() {
-		$('#nav').toggleClass('open');
-	});
+        return check;
+    });
 
-	///////////////////////////
-	// Mobile dropdown
-	$('.has-dropdown a').on('click', function() {
-		$(this).parent().toggleClass('open-drop');
-	});
 
-	///////////////////////////
-	// On Scroll
-	$(window).on('scroll', function() {
-		var wScroll = $(this).scrollTop();
+    $('.validate-form .input100').each(function(){
+        $(this).focus(function(){
+           hideValidate(this);
+        });
+    });
 
-		// Fixed nav
-		wScroll > 1 ? $('#nav').addClass('fixed-nav') : $('#nav').removeClass('fixed-nav');
+    function validate (input) {
+        if($(input).attr('type') == 'email' || $(input).attr('name') == 'email') {
+            if($(input).val().trim().match(/^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{1,5}|[0-9]{1,3})(\]?)$/) == null) {
+                return false;
+            }
+        }
+        else {
+            if($(input).val().trim() == ''){
+                return false;
+            }
+        }
+    }
 
-		// Back To Top Appear
-		wScroll > 700 ? $('#back-to-top').fadeIn() : $('#back-to-top').fadeOut();
-	});
+    function showValidate(input) {
+        var thisAlert = $(input).parent();
 
-	///////////////////////////
-	// magnificPopup
-	$('.work').magnificPopup({
-		delegate: '.lightbox',
-		type: 'image'
-	});
+        $(thisAlert).addClass('alert-validate');
+    }
 
-	///////////////////////////
-	// Owl Carousel
-	$('#about-slider').owlCarousel({
-		items:1,
-		loop:true,
-		margin:15,
-		nav: true,
-		navText : ['<i class="fa fa-angle-left"></i>','<i class="fa fa-angle-right"></i>'],
-		dots : true,
-		autoplay : true,
-		animateOut: 'fadeOut'
-	});
+    function hideValidate(input) {
+        var thisAlert = $(input).parent();
 
-	$('#testimonial-slider').owlCarousel({
-		loop:true,
-		margin:15,
-		dots : true,
-		nav: false,
-		autoplay : true,
-		responsive:{
-			0: {
-				items:1
-			},
-			992:{
-				items:2
-			}
-		}
-	});
+        $(thisAlert).removeClass('alert-validate');
+    }
+    
+    
 
 })(jQuery);
