@@ -83,3 +83,11 @@ body {
   height: 100px;
   width: 250px;
 }
+.team{
+   height: 300px !important;
+  width: 950px !important;
+    display: block !important;
+    margin-left: auto !important;
+  margin-right: auto !important;
+
+}
