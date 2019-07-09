@@ -1,35 +1,3 @@
-<?php 
- if(isset($_POST['submit'])){
- require 'phpmailer/PHPMailerAutolaod.php';
- 
-
-
- $mail = new PHPMailer; // create a new object
-$mail->IsSMTP(); // enable SMTP
-$mail->SMTPDebug = 1; // debugging: 1 = errors and messages, 2 = messages only
-$mail->SMTPAuth = true; // authentication enabled
-$mail->SMTPSecure = 'ssl'; // secure transfer enabled REQUIRED for Gmail
-$mail->Host = "smtp.gmail.com";
-$mail->Port = 465; // or 587
-$mail->IsHTML(true);
-$mail->Username = "paganbr10@gmail.com";
-$mail->Password = "helico@96";
-$mail->SetFrom($_POST['email'],($_POST['name']));
-$mail->AddAddress("paganbr10@gmail.com");
-$mail->AddReplyTo($_POST['phone'],$_POST['email']);
-$mail->Body =' <h1 class="align=center"> Nom :'.$_POST['name'].'<br>Télephone :'.$_POST['phone'].' Email :'.$_POST['email'].'<br> Message :'.$_POST['message']. '</h1>';
-
-
- if(!$mail->Send()) {
-    echo "Mailer Error: " . $mail->ErrorInfo;
- } else {
-    echo "Message envoyée avec succès";
- }
-
-
-}
-
- ?>
 
  <!DOCTYPE html>
 <html lang="en">
