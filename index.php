@@ -141,7 +141,7 @@
     <div class="row">
       <div class="col-lg-6 col-sm-6 portfolio-item">
         <div class="card h-100">
-          <img class="card-img-top" src="http://placehold.it/700x400" alt="">
+          <img class="card-img-top serv2" src="img/servcondi.jpeg" alt="">
           <div class="card-body">
             <h4 class="card-title">
               <strong style="color: red;" href="#">CONDITIONNEMENT D’AIR</strong>
@@ -154,16 +154,16 @@
       </div>
       <div class="col-lg-6 col-sm-6 portfolio-item">
         <div class="card h-100">
-          <img class="card-img-top" src="http://placehold.it/700x400" alt="">
+          <img class="card-img-top serv2" src="img/servchauf.jpeg" alt="">
           <div class="card-body">
             <h4 class="card-title">
-              <strong style="color: blue;" href="#">REFRIGERATION</strong>
+              <strong style="color: blue;" href="#">CHAUFFAGE</strong>
             </h4>
             <p class="card-text">Etude-Réalisation et Maintenance</p>
-            <p class="card-text">Froid Industriel</p>
-            <p class="card-text">Chambres Froides Préfabriquées (CFP)</p>
-            <p class="card-text">Chambres Humides et Climatique</p>
-            <p class="card-text">Chambres de Germination</p>
+            <p class="card-text">Production d’Eau chaude</p>
+            <p class="card-text">Planchers Chauffants</p>
+            <p class="card-text">Anti calcaires non énergivore et sans consommable</p>
+            <p class="card-text">Anti boues non énergivore et sans consommable pour circuits fermés</p>
           </div>
         </div>
       </div>
