@@ -19,32 +19,7 @@
 <body>
 
   <!-- Navigation -->
-  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top" >
-    <div class="container">
-      
-      <a class="navbar-brand" href="index.html"><img class="logo" src="img/logotst3.png" alt="logo" style="width: 330px; height: 7.2vh;"></a>
-         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="index.html">Accueil</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="services.html">Nos services</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="about.html">A propos</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="contact.html">Contact</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
+  <?php include 'nav.php'; ?>
   <header>
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
       <ol class="carousel-indicators">
@@ -56,10 +31,12 @@
         <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
         <li data-target="#carouselExampleIndicators" data-slide-to="6"></li>
         <li data-target="#carouselExampleIndicators" data-slide-to="7"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="8"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="9"></li>
       
       </ol>
       <div class="carousel-inner" role="listbox">
-        <div class="carousel-item active" style="background-image: url('img/slide9.png')">
+        <div class="carousel-item active" style="background-image: url('img/jj.png')">
           
         </div>
         <div class="carousel-item " style="background-image: url('img/slide4.jpg')">
@@ -84,6 +61,12 @@
           
         </div>
         <div class="carousel-item" style="background-image: url('img/slide8.jpg')">
+          
+        </div>
+         <div class="carousel-item" style="background-image: url('img/slide10.jpg')">
+          
+        </div>
+         <div class="carousel-item" style="background-image: url('img/slide11.jpg')">
           
         </div>
 
@@ -158,7 +141,7 @@
     <div class="row">
       <div class="col-lg-6 col-sm-6 portfolio-item">
         <div class="card h-100">
-          <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+          <img class="card-img-top" src="http://placehold.it/700x400" alt="">
           <div class="card-body">
             <h4 class="card-title">
               <strong style="color: red;" href="#">CONDITIONNEMENT D’AIR</strong>
@@ -171,7 +154,7 @@
       </div>
       <div class="col-lg-6 col-sm-6 portfolio-item">
         <div class="card h-100">
-          <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+          <img class="card-img-top" src="http://placehold.it/700x400" alt="">
           <div class="card-body">
             <h4 class="card-title">
               <strong style="color: blue;" href="#">REFRIGERATION</strong>
@@ -185,7 +168,7 @@
         </div>
       </div>
       <div class="col-md-4" >
-        <a class="btn btn-md btn-primary" href="services.html">Plus de services</a>
+        <a class="btn btn-md btn-primary" href="services.php">Plus de services</a>
       </div>
     </div>
     <!-- /.row -->
@@ -207,12 +190,7 @@
   <!-- /.container -->
 
   <!-- Footer -->
-  <footer class="py-5 bg-dark">
-    <div class="container">
-      <p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
-    </div>
-    <!-- /.container -->
-  </footer>
+ <?php include 'footer.php'; ?>
 
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>

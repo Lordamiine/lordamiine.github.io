@@ -1,4 +1,37 @@
-<!DOCTYPE html>
+<?php 
+ if(isset($_POST['submit'])){
+ require 'phpmailer/PHPMailerAutolaod.php';
+ 
+
+
+ $mail = new PHPMailer; // create a new object
+$mail->IsSMTP(); // enable SMTP
+$mail->SMTPDebug = 1; // debugging: 1 = errors and messages, 2 = messages only
+$mail->SMTPAuth = true; // authentication enabled
+$mail->SMTPSecure = 'ssl'; // secure transfer enabled REQUIRED for Gmail
+$mail->Host = "smtp.gmail.com";
+$mail->Port = 465; // or 587
+$mail->IsHTML(true);
+$mail->Username = "paganbr10@gmail.com";
+$mail->Password = "helico@96";
+$mail->SetFrom($_POST['email'],($_POST['name']));
+$mail->AddAddress("paganbr10@gmail.com");
+$mail->AddReplyTo($_POST['phone'],$_POST['email']);
+$mail->Body =' <h1 class="align=center"> Nom :'.$_POST['name'].'<br>Télephone :'.$_POST['phone'].' Email :'.$_POST['email'].'<br> Message :'.$_POST['message']. '</h1>';
+
+
+ if(!$mail->Send()) {
+    echo "Mailer Error: " . $mail->ErrorInfo;
+ } else {
+    echo "Message envoyée avec succès";
+ }
+
+
+}
+
+ ?>
+
+ <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -18,38 +51,13 @@
   <link href="css/modern-business.css" rel="stylesheet">
 
 </head>
-
 <body>
 
   <!-- Navigation -->
-   <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top" >
-    <div class="container">
-      
-      <a class="navbar-brand" href="index.html"><img class="logo" src="img/logotst3.png" alt="logo" style="width: 330px; height: 7.2vh;"></a>
-         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="index.html">Accueil</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="services.html">Nos services</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="about.html">A propos</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="contact.html">Contact</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+  <?php include'nav.php'; ?>
   <!-- Page Content -->
   <div class="container">
-
+   
     <!-- Page Heading/Breadcrumbs -->
     <h1 class="mt-4 mb-3">Page de contact
       
@@ -113,31 +121,32 @@
           <div class="control-group form-group">
             <div class="controls">
               <label>Nom :</label>
-              <input type="text" class="form-control" id="name" required data-validation-required-message="Please enter your name.">
+              <input type="text" class="form-control" id="name" name="name" required data-validation-required-message="Please enter your name.">
               <p class="help-block"></p>
             </div>
           </div>
           <div class="control-group form-group">
             <div class="controls">
               <label>Téléphone :</label>
-              <input type="tel" class="form-control" id="phone" required data-validation-required-message="Please enter your phone number.">
+              <input type="phone" class="form-control" id="phone" name="phone" required data-validation-required-message="Please enter your phone number.">
             </div>
           </div>
           <div class="control-group form-group">
             <div class="controls">
               <label>Email :</label>
-              <input type="email" class="form-control" id="email" required data-validation-required-message="Please enter your email address.">
+              <input type="email" class="form-control" id="email" name="email" required data-validation-required-message="Please enter your email address.">
             </div>
+            
           </div>
           <div class="control-group form-group">
             <div class="controls">
               <label>Message:</label>
-              <textarea rows="10" cols="100" class="form-control" id="message" required data-validation-required-message="Please enter your message" maxlength="999" style="resize:none"></textarea>
+              <textarea rows="10" cols="100" class="form-control" id="message" name="message" required data-validation-required-message="Please enter your message" maxlength="999" style="resize:none"></textarea>
             </div>
           </div>
           <div id="success"></div>
           <!-- For success/fail messages -->
-          <button type="submit" class="btn btn-primary" id="sendMessageButton">Send Message</button>
+          <button type="submit" id="submit" name="submit" class="btn btn-primary" value="send">Envoyer</button>
         </form>
       </div>
 
@@ -148,12 +157,7 @@
   <!-- /.container -->
 
   <!-- Footer -->
-  <footer class="py-5 bg-dark">
-    <div class="container">
-      <p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
-    </div>
-    <!-- /.container -->
-  </footer>
+  <?php include 'footer.php'; ?>
 
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>

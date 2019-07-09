@@ -23,31 +23,7 @@
 <body>
 
   <!-- Navigation -->
- <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top" >
-    <div class="container">
-      
-      <a class="navbar-brand" href="index.html"><img class="logo" src="img/logotst3.png" alt="logo" style="width: 330px; height: 7.2vh;"></a>
-         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="index.html">Accueil</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="services.html">Nos services</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="about.html">A propos</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="contact.html">Contact</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+ <?php include 'nav.php'; ?>
 
   <!-- Page Content -->
   <div class="container navbarResponsive">
@@ -68,7 +44,7 @@
     <div class="row">
       <div class="col-md-7">
         <a href="#">
-          <img class="img-fluid rounded mb-3 mb-md-0" src="http://placehold.it/700x300" alt="">
+          <img class="img-fluid rounded mb-3 mb-md-0 serv" src="img/servcondi.jpeg" alt="" >
         </a>
       </div>
       <div class="col-md-5">
@@ -88,14 +64,13 @@
      <div class="row">
       <div class="col-md-7">
         <a href="#">
-          <img class="img-fluid rounded mb-3 mb-md-0" src="http://placehold.it/700x300" alt="">
+          <img class="img-fluid rounded mb-3 mb-md-0 serv" src="img/servfroid.jpeg" alt="">
         </a>
       </div>
       <div class="col-md-5">
-       <h3 style="color: blue;">REFRIG<span style="color: red;">ERATION</span></h3>
+       <h3 style="color: blue;">FROID <span style="color: red;">INDUSTRIEL</span></h3>
        
         <li>Etude-Réalisation et Maintenance</li>
-        <li>Froid Industriel</li>
         <li>Chambres Froides Préfabriquées (CFP)</li>
         <li>Chambres Humides et Climatique</li>
         <li>Chambres de Germination</li>
@@ -109,7 +84,7 @@
      <div class="row">
       <div class="col-md-7">
         <a href="#">
-          <img class="img-fluid rounded mb-3 mb-md-0" src="http://placehold.it/700x300" alt="">
+          <img class="img-fluid rounded mb-3 mb-md-0 serv" src="img/serveau.jpg" alt="">
         </a>
       </div>
       <div class="col-md-5">
@@ -123,22 +98,16 @@
       </div>
     </div>
 
- <hr>
-    
-    
-   
-  
-
   <hr>
 
     <div class="row">
       <div class="col-md-7">
         <a href="#">
-          <img class="img-fluid rounded mb-3 mb-md-0" src="http://placehold.it/700x300" alt="">
+          <img class="img-fluid rounded mb-3 mb-md-0 serv" src="img/servchauf.jpeg" alt="">
         </a>
       </div>
       <div class="col-md-5">
-       <h3 style="color: blue;">Chauf<span style="color: red;">fage</span></h3>
+       <h3 style="color: blue;">CHAUF<span style="color: red;">FAGE</span></h3>
        
         <li>Etude-Réalisation et Maintenance</li>
         <li>Production d’Eau chaude</li>
@@ -149,45 +118,48 @@
       </div>
     </div>
    
- 
+   <hr>
 
-  <hr>
 
-    <div class="row">
+
+
+
+ <div class="row">
       <div class="col-md-7">
         <a href="#">
-          <img class="img-fluid rounded mb-3 mb-md-0" src="http://placehold.it/700x300" alt="">
+          <img class="img-fluid rounded mb-3 mb-md-0 serv" src="img/servvente.jpeg" alt="">
         </a>
       </div>
       <div class="col-md-5">
-       <h3 style="color: red;">TECHNIQUES DE <span style="color: blue;">LABORATOIRE</span></h3>
-       
-        <li>Etude-Réalisation et Maintenance</li>
-        <li>Conception et Fabrication de tout Equipement scientifique selon le cahier de charge du client</li>
-        <li>Réparation et Maintenance de toute sorte de matériel de laboratoire et Equipement scientifique</li>
-        <li>Salles Blanches en Etude et Conception</li>
+       <h3 style="color: red;">CLIMAT<span style="color: blue;">ISATION</span></h3>
+       <li>Etude-Réalisation et Maintenance</li>
+        <LI>Equipements de bonne qualité</LI>
        
       </div>
     </div>
-  
-  <hr>
 
 
-
-
-
-
+<hr>
+    <div class="row">
+      <div class="col-md-7">
+        <a href="#">
+          <img class="img-fluid rounded mb-3 mb-md-0 serv" src="http://placehold.jp/700x300.png" alt="">
+        </a>
+      </div>
+      <div class="col-md-5">
+       <h3 style="color: red;">PLOMB<span style="color: blue;">ERIE</span></h3>
+       
+        <li>Etude-Réalisation et Maintenance</li>
+        
+       
+      </div>
+    </div>
+ <hr>
  </div>
 
   
   <!-- Footer -->
-  <footer class="py-5 bg-dark">
-    <div class="container">
-      <p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
-    </div>
-    <!-- /.container -->
-  </footer>
-
+ <?php include'footer.php'; ?>
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

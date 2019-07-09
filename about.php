@@ -23,31 +23,7 @@
 <body>
 
   <!-- Navigation -->
-   <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top" >
-    <div class="container">
-      
-      <a class="navbar-brand" href="index.html"><img class="logo" src="img/logotst3.png" alt="logo" style="width: 330px; height: 7.2vh;"></a>
-         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="index.html">Accueil</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="services.html">Nos services</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="about.html">A propos</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="contact.html">Contact</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+  <?php include 'nav.php'; ?>
   <!-- Page Content -->
   <div class="container">
 
@@ -96,12 +72,7 @@
   <!-- /.container -->
 
   <!-- Footer -->
-  <footer class="py-5 bg-dark foot">
-    <div class="container" >
-      <p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
-    </div>
-    <!-- /.container -->
-  </footer>
+<?php include 'footer.php'; ?>
 
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>

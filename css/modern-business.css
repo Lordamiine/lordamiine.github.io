@@ -6,6 +6,21 @@
 body {
   padding-top: 56px;
 }
+.img-responsive {
+  width: 100%;
+  height: auto;
+}
+.foot{
+  position: absolute !important;
+  bottom: 0 !important;
+  width: 100% !important;
+
+}
+
+.serv{
+  height: 300px !important;
+  width: 700px !important;
+}
 
 .carousel-item {
   height: 65vh;
