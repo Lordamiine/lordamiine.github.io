@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+ <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Produits</title>
+
+ <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="css/modern-business.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+
+<style>
+
+
+/* Center website */
+.main {
+  max-width: 1000px;
+  margin: auto;
+}
+
+h1 {
+  font-size: 50px;
+  word-break: break-all;
+}
+
+.raw {
+  margin: 10px -16px;
+}
+
+/* Add padding BETWEEN each column */
+.raw,
+.raw > .column {
+  padding: 8px;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 33.33%;
+  display: none; /* Hide all elements by default */
+}
+
+/* Clear floats after raws */ 
+.raw:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Content */
+.content {
+  background-color: white;
+  padding: 10px;
+}
+
+/* The "show" class is added to the filtered elements */
+.show {
+  display: block;
+}
+
+/* Style the buttons */
+.btun {
+  border: none;
+  outline: none;
+  padding: 12px 16px;
+  background-color: white;
+  cursor: pointer;
+}
+
+.btun:hover {
+  background-color: #ddd;
+}
+
+.btun.active {
+  background-color: #666;
+  color: white;
+}
+</style>
+</head>
+<body>
+<nav class="circle navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top nav-pills">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">LOGO</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="produits.html">Produits</a>
+          </li>
+           <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+<!-- MAIN (Center website) -->
+<div class="container">
+ <h1 class="mt-4 mb-3 text-center">Nos produits
+    <br>
+    </h1>
+    <hr>
+
+   
+
+
+
+<div class="main">
+
+<div id="mybtunContainer">
+  <button class="btun active" onclick="filterSelection('all')"> Tout</button>
+  <button class="btun" onclick="filterSelection('comple')">Complément</button>
+  <button class="btun" onclick="filterSelection('access')">Accessoires</button>
+  <button class="btun" onclick="filterSelection('amino')">Amino</button>
+  <button class="btun" onclick="filterSelection('bcaa')">BCAA</button>
+  <button class="btun" onclick="filterSelection('creatine')">Créatine</button>
+</div>
+
+<!-- Portfolio Gallery Grid -->
+<div class="raw">
+  <div class="column comple">
+    <div class="content">
+      <img src="img/mass.jpg" alt="comple" style="width:70%">
+      <h4>Libelle</h4>
+      <p>Description ou prix</p>
+    </div>
+  </div>
+  <div class="column access">
+    <div class="content">
+    <img src="img/big.jpg" alt="access" style="width:70%">
+      <h4>Libelle</h4>
+      <p>Description ou prix</p>
+    </div>
+  </div>
+  <div class="column amino">
+    <div class="content">
+    <img src="img/amino.jpg" alt="amino" style="width:70%">
+      <h4>Libelle</h4>
+      <p>Description ou prix</p>
+    </div>
+  </div>
+  
+  <div class="column bcaa">
+    <div class="content">
+      <img src="img/bcaa.jpg" alt="bcaa" style="width:70%">
+      <h4>Libelle</h4>
+      <p>Description ou prix</p>
+    </div>
+  </div>
+  <div class="column creatine">
+    <div class="content">
+    <img src="img/crea.jpg" alt="creatine" style="width:70%">
+      <h4>Libelle</h4>
+      <p>Description ou prix</p>
+    </div>
+  </div>
+  
+<!-- END GRID -->
+</div>
+
+<!-- END MAIN -->
+</div>
+</div>
+ <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+<script>
+filterSelection("all")
+function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("column");
+  if (c == "all") c = "";
+  for (i = 0; i < x.length; i++) {
+    w3RemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+  }
+}
+
+function w3AddClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+  }
+}
+
+function w3RemoveClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);     
+    }
+  }
+  element.className = arr1.join(" ");
+}
+
+
+// Add active class to the current button (highlight it)
+var btunContainer = document.getElementById("mybtunContainer");
+var btuns = btunContainer.getElementsByClassName("btun");
+for (var i = 0; i < btuns.length; i++) {
+  btuns[i].addEventListener("click", function(){
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+</script>
+
+</body>
+</html>
